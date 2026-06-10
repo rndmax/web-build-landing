@@ -67,7 +67,16 @@ jobs:
           set -euo pipefail
 
           cd "$DEPLOY_PATH"
-          git fetch --prune origin main
+          git fetch --prune origin main:refs/remotes/origin/main
+
+          deploy_ref_sha="$(git rev-parse "$DEPLOY_REF^{commit}")"
+          current_main_sha="$(git rev-parse "origin/main^{commit}")"
+          if [ "$deploy_ref_sha" != "$current_main_sha" ]; then
+            printf 'Skipping stale deploy: %s resolves to %s, but origin/main is %s\n' \
+              "$DEPLOY_REF" "$deploy_ref_sha" "$current_main_sha"
+            exit 0
+          fi
+
           git reset --hard "$DEPLOY_REF"
           git clean -fd
           REMOTE_SCRIPT
