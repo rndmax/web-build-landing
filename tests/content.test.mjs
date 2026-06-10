@@ -10,7 +10,7 @@ const faviconSvg = existsSync(faviconUrl) ? readFileSync(faviconUrl, "utf8") : "
 const socialPreviewUrl = new URL("../assets/social-preview.svg", import.meta.url);
 const socialPreviewSvg = existsSync(socialPreviewUrl) ? readFileSync(socialPreviewUrl, "utf8") : "";
 const launchPlanText =
-  "Ответьте на вопросы в Telegram — получите список того, что нужно для запуска: базовый минимум, структуру сайта, аналитику и, самое важное, юридический блок, чтобы снизить риск штрафов.";
+  "Мы делаем сайты каждый день и создали базовый минимум для запуска сайта. С удовольствием делимся с вами.";
 const normalizedHtml = html.replace(/\s+/g, " ");
 
 function optionValues(groupName) {
@@ -29,6 +29,15 @@ assert.match(html, /<small data-estimate-timeline>от 7 дней<\/small>/);
 assert.doesNotMatch(html, /webstudio_owner/);
 assert.match(html, /https:\/\/t\.me\/rndmax/);
 assert.match(html, /data-telegram-link[^>]*target="_blank"[^>]*rel="noopener noreferrer"/);
+assert.match(
+  html,
+  /<a class="button button-primary" href="#calculator" data-scroll-target="#calculator">\s*Рассчитать стоимость\s*<\/a>/,
+);
+assert.doesNotMatch(html, /Рассчитать стоимость за 5 минут/);
+assert.equal((html.match(/>\s*Получить план запуска сайта\s*<\/a>/g) ?? []).length, 2);
+assert.doesNotMatch(html, /Получить план в Telegram/);
+assert.doesNotMatch(html, /class="telegram-note"/);
+assert.doesNotMatch(html, /Ответим в Telegram и предложим понятный следующий шаг/);
 assert.match(html, /<script src="\.\/script\.js"><\/script>/);
 assert.doesNotMatch(html, /type="module"/);
 assert.match(html, /<link rel="icon" type="image\/svg\+xml" href="\.\/favicon\.svg" \/>/);
@@ -88,17 +97,15 @@ assert.doesNotMatch(
   html,
   /Ответьте на 4 вопроса, и мы отправим ориентир по цене и срокам в Telegram\./,
 );
-assert.match(
-  html,
-  /<div class="telegram-plan">[\s\S]*?<h3>Получите план запуска сайта за 5 минут<\/h3>/,
-);
+assert.match(html, /<div class="telegram-plan">[\s\S]*?<h3>Получите план запуска<\/h3>/);
 assert.ok(normalizedHtml.includes(launchPlanText));
-assert.match(html, />\s*Получить план в Telegram\s*<\/a>/);
+assert.doesNotMatch(html, /Получите план запуска сайта за 5 минут/);
+assert.doesNotMatch(html, /Ответьте на вопросы в Telegram/);
 assert.doesNotMatch(html, /Получить расчет в Telegram/);
 const finalCta =
   html.match(/<section class="final-cta section-shell">([\s\S]*?)<\/section>/)?.[1] ?? "";
 const normalizedFinalCta = finalCta.replace(/\s+/g, " ");
-assert.match(finalCta, /<a[\s\S]*?>\s*Получите план запуска сайта за 5 минут\s*<\/a>/);
+assert.match(finalCta, /<a[\s\S]*?>\s*Получить план запуска сайта\s*<\/a>/);
 assert.ok(normalizedFinalCta.includes(launchPlanText));
 assert.doesNotMatch(finalCta, /Готовы обсудить проект/);
 assert.doesNotMatch(finalCta, /Рассчитаем формат сайта и предложим следующий шаг/);
@@ -111,6 +118,13 @@ assert.doesNotMatch(
 assert.doesNotMatch(html, /Ваш Telegram для ответа/);
 assert.doesNotMatch(html, /data-telegram-input/);
 assert.doesNotMatch(html, /class="telegram-field"/);
+assert.match(
+  html,
+  /<section class="included section-shell" aria-label="Что вы получите">\s*<h2 class="included-heading">Что вы получите<\/h2>\s*<div class="included-item">\s*<strong>Готовый сайт<\/strong>/,
+);
+assert.match(css, /\.included-heading \{[\s\S]*?grid-column:\s*1 \/ -1;/);
+assert.match(css, /\.included-item:first-of-type \{/);
+assert.doesNotMatch(css, /\.included-item:first-child \{/);
 
 assert.match(html, /Базовая подготовка для Яндекс \(Алиса ИИ\) и Google \(остальные ИИ\)\./);
 const caseGrid = html.match(/<div class="case-grid">([\s\S]*?)<\/div>\s*<\/section>/)?.[1] ?? "";
@@ -175,6 +189,22 @@ assert.match(css, /box-shadow:\s*0 0 0 6px rgba\(255, 90, 22, 0\.2\)/);
 assert.match(css, /\.telegram-plan \{/);
 assert.match(css, /\.telegram-plan h3 \{/);
 assert.match(css, /\.telegram-plan p \{/);
+assert.match(
+  css,
+  /@media \(max-width: 720px\)[\s\S]*?\.hero-intro \{[\s\S]*?min-height:\s*calc\(100svh - 74px\);[\s\S]*?justify-content:\s*center;/,
+);
+assert.match(
+  css,
+  /@media \(max-width: 720px\)[\s\S]*?h1 \{[\s\S]*?font-size:\s*clamp\(30px, 9\.2vw, 40px\);/,
+);
+assert.match(
+  css,
+  /@media \(max-width: 720px\)[\s\S]*?\.hero-subtitle \{[\s\S]*?font-size:\s*16px;[\s\S]*?line-height:\s*1\.55;/,
+);
+assert.match(
+  css,
+  /@media \(max-width: 720px\)[\s\S]*?\.trust-row div \{[\s\S]*?border-bottom:\s*1px solid var\(--line\);[\s\S]*?border-left:\s*3px solid rgba\(255, 90, 22, 0\.42\);/,
+);
 assert.match(css, /\.case-card \{[\s\S]*?cursor:\s*pointer;[\s\S]*?transition:/);
 assert.match(css, /\.case-card:hover,[\s\S]*?\.case-card\.is-in-view \{/);
 assert.match(css, /\.case-card:hover img,[\s\S]*?\.case-card\.is-in-view img \{/);
