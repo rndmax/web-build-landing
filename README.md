@@ -36,7 +36,7 @@ requests targeting `main`.
 Production deployment is configured in `.github/workflows/deploy.yml`.
 
 It runs automatically after checks pass on `main` and can also be started manually from the GitHub
-Actions UI. Deployment connects to the server over SSH and updates the Nginx-served repository clone
-to `origin/main`.
+Actions UI. Automatic deploys reset the Nginx-served repository clone to the exact checked commit
+only if it still matches the current `origin/main`; manual redeploys reset to `origin/main`.
 
 See `docs/deployment.md` for the required GitHub secrets and server setup.

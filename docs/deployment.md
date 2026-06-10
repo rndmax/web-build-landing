@@ -8,15 +8,25 @@ The workflow in `.github/workflows/deploy.yml` supports two paths:
 - manual redeploy from the GitHub Actions UI with `Run workflow`.
 
 The server keeps a clone of this repository in the directory served by Nginx. The deploy job connects
-over SSH and runs:
+over SSH, fetches the current `main`, skips stale automatic deploys, and runs:
 
 ```bash
-git fetch --prune origin main
-git reset --hard origin/main
+git fetch --prune origin main:refs/remotes/origin/main
+
+deploy_ref_sha="$(git rev-parse "$DEPLOY_REF^{commit}")"
+current_main_sha="$(git rev-parse "origin/main^{commit}")"
+if [ "$deploy_ref_sha" != "$current_main_sha" ]; then
+  printf 'Skipping stale deploy: %s resolves to %s, but origin/main is %s\n' \
+    "$DEPLOY_REF" "$deploy_ref_sha" "$current_main_sha"
+  exit 0
+fi
+
+git reset --hard "$DEPLOY_REF"
 git clean -fd
 ```
 
-This updates HTML, CSS, JavaScript, images, and any newly added static pages.
+For automatic deploys, `DEPLOY_REF` is the `Landing checks` commit SHA. For manual redeploys, it is
+`origin/main`. This updates HTML, CSS, JavaScript, images, and any newly added static pages.
 It also removes stale untracked files from the deployed checkout, so `DEPLOY_PATH` should be a pure
 repository clone without local-only files in the served directory.
 
@@ -66,6 +76,8 @@ If SSH uses a non-standard port, include it:
 ```bash
 ssh-keyscan -p 2222 -H your.server.host
 ```
+
+Verify the SSH host key fingerprint out of band before saving `DEPLOY_KNOWN_HOSTS`.
 
 ## Production Approval
 
