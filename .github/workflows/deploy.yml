@@ -43,28 +43,31 @@ jobs:
           printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
 
-      - name: Pull latest main on server
+      - name: Deploy checked commit on server
         env:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
           DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+          DEPLOY_REF: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || 'origin/main' }}
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
         run: |
           set -euo pipefail
 
           : "${DEPLOY_HOST:?DEPLOY_HOST secret is required}"
+          : "${DEPLOY_REF:?DEPLOY_REF is required}"
           : "${DEPLOY_USER:?DEPLOY_USER secret is required}"
           : "${DEPLOY_PATH:?DEPLOY_PATH secret is required}"
 
           port="${DEPLOY_PORT:-22}"
           quoted_deploy_path="$(printf '%q' "$DEPLOY_PATH")"
+          quoted_deploy_ref="$(printf '%q' "$DEPLOY_REF")"
 
           ssh -p "$port" -i ~/.ssh/deploy_key "$DEPLOY_USER@$DEPLOY_HOST" \
-            "DEPLOY_PATH=$quoted_deploy_path bash -s" <<'REMOTE_SCRIPT'
+            "DEPLOY_PATH=$quoted_deploy_path DEPLOY_REF=$quoted_deploy_ref bash -s" <<'REMOTE_SCRIPT'
           set -euo pipefail
 
           cd "$DEPLOY_PATH"
           git fetch --prune origin main
-          git reset --hard origin/main
+          git reset --hard "$DEPLOY_REF"
           git clean -fd
           REMOTE_SCRIPT
