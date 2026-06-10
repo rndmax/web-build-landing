@@ -30,3 +30,13 @@ git push -u origin landing-init
 
 Then open a pull request from `landing-init` into `main`. GitHub Actions runs all checks on pull
 requests targeting `main`.
+
+## Deployment
+
+Production deployment is configured in `.github/workflows/deploy.yml`.
+
+It runs automatically after checks pass on `main` and can also be started manually from the GitHub
+Actions UI. Deployment connects to the server over SSH and updates the Nginx-served repository clone
+to `origin/main`.
+
+See `docs/deployment.md` for the required GitHub secrets and server setup.

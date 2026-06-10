@@ -5,3 +5,9 @@ coverage/
 dist/
 .env
 .env.*
+*.key
+*.pem
+deploy_key
+deploy_key.*
+id_rsa
+id_rsa.*
