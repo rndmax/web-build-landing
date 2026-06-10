@@ -34,6 +34,10 @@ assert.doesNotMatch(html, /type="module"/);
 assert.match(html, /<link rel="icon" type="image\/svg\+xml" href="\.\/favicon\.svg" \/>/);
 assert.match(privacyHtml, /<link rel="icon" type="image\/svg\+xml" href="\.\/favicon\.svg" \/>/);
 assert.match(
+  privacyHtml,
+  /<nav class="main-nav" aria-label="Основная навигация">[\s\S]*?<a href="\.\/index\.html">Главная<\/a>[\s\S]*?<a href="\.\/index\.html#cases">Кейсы<\/a>/,
+);
+assert.match(
   html,
   /<meta[\s\S]*?name="description"[\s\S]*?content="Корпоративный портал, лендинг для рекламы или интернет-магазин с системой лояльности — под ключ\. С фиксированной ценой, прозрачными сроками и официальной гарантией\."[\s\S]*?\/>/,
 );
