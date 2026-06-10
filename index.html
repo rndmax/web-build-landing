@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Корпоративный портал, лендинг для рекламы или интернет-магазин с системой лояльности — под ключ. С фиксированной ценой, прозрачными сроками и официальной гарантией."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="WebBuild" />
+    <meta
+      property="og:title"
+      content="Создадим сайт, который приносит заявки: от прототипа до запуска за 14 дней"
+    />
+    <meta
+      property="og:description"
+      content="Корпоративный портал, лендинг для рекламы или интернет-магазин с системой лояльности — под ключ. С фиксированной ценой, прозрачными сроками и официальной гарантией."
+    />
+    <meta property="og:image" content="./assets/social-preview.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Логотип WB и описание услуги WebBuild" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Создадим сайт, который приносит заявки: от прототипа до запуска за 14 дней"
+    />
+    <meta
+      name="twitter:description"
+      content="Корпоративный портал, лендинг для рекламы или интернет-магазин с системой лояльности — под ключ. С фиксированной ценой, прозрачными сроками и официальной гарантией."
+    />
+    <meta name="twitter:image" content="./assets/social-preview.svg" />
+    <meta name="theme-color" content="#07122f" />
+    <title>Сайт за 14 дней | Веб-разработка и IT-решения</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="На главный экран">
+        <span class="brand-mark">WB</span>
+        <span>
+          <strong>WebBuild</strong>
+          <small>Разработка и интеграции</small>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="#cases">Кейсы</a>
+        <a href="#extensions">Решения</a>
+        <a href="#process">Как работаем</a>
+        <a href="#faq">FAQ</a>
+        <a href="#calculator">Расчет</a>
+      </nav>
+      <a
+        class="header-cta"
+        data-telegram-link
+        href="https://t.me/rndmax"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Написать в Telegram"
+      >
+        <span class="header-cta-label">Написать в Telegram</span>
+        <svg class="header-cta-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M21.9 4.6 18.8 19.3c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.8.4l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L7.4 13.5 3 12.1c-1-.3-1-1 .2-1.4L20.4 4c.8-.3 1.5.2 1.5.6z"
+          />
+        </svg>
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <p class="eyebrow">Сайты, веб-приложения и IT-решения для бизнеса</p>
+          <h1>Создадим сайт, который приносит заявки: от прототипа до запуска за 14 дней</h1>
+          <p class="hero-subtitle">
+            Корпоративный портал, лендинг для рекламы или интернет-магазин с системой лояльности —
+            под ключ. С фиксированной ценой, прозрачными сроками и официальной гарантией.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#calculator" data-scroll-target="#calculator">
+              Рассчитать стоимость за 5 минут
+            </a>
+            <span class="telegram-note">Ответим в Telegram и предложим понятный следующий шаг</span>
+          </div>
+          <div class="trust-row" aria-label="Что входит в запуск">
+            <div>
+              <strong>14 дней</strong>
+              <span>до первого запуска</span>
+            </div>
+            <div>
+              <strong>30 дней</strong>
+              <span>поддержки после запуска</span>
+            </div>
+            <div>
+              <strong>Фиксированная цена</strong>
+              <span>без доплат в процессе</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="calculator-panel" id="calculator" aria-label="Квиз-калькулятор">
+          <div class="panel-header">
+            <p class="eyebrow">Квиз-калькулятор</p>
+            <h2>Подберите формат сайта за 5 минут</h2>
+            <p>Ответьте на 4 вопроса, и мы покажем ориентир по цене и срокам.</p>
+          </div>
+
+          <div class="quiz-group">
+            <h3>1. Какой тип сайта вам нужен?</h3>
+            <div class="option-grid">
+              <button type="button" data-option-group="projectType" data-option-value="landing">
+                Лендинг
+              </button>
+              <button type="button" data-option-group="projectType" data-option-value="corporate">
+                Корпоративный сайт
+              </button>
+              <button type="button" data-option-group="projectType" data-option-value="shop">
+                Интернет-магазин
+              </button>
+              <button type="button" data-option-group="projectType" data-option-value="app">
+                Веб-приложение
+              </button>
+            </div>
+          </div>
+
+          <div class="quiz-group">
+            <h3>2. Сколько страниц примерно?</h3>
+            <div class="option-grid three">
+              <button type="button" data-option-group="pages" data-option-value="1">1</button>
+              <button type="button" data-option-group="pages" data-option-value="2-5">2-5</button>
+              <button type="button" data-option-group="pages" data-option-value="5+">5+</button>
+            </div>
+          </div>
+
+          <div class="quiz-group">
+            <h3>3. Какой дизайн нужен?</h3>
+            <div class="option-grid">
+              <button type="button" data-option-group="design" data-option-value="custom">
+                Индивидуальный
+              </button>
+              <button type="button" data-option-group="design" data-option-value="template">
+                Быстрее на шаблоне
+              </button>
+            </div>
+          </div>
+
+          <div class="quiz-group">
+            <h3>4. Нужны интеграции?</h3>
+            <div class="option-grid integrations-grid">
+              <button type="button" data-option-group="integrations" data-option-value="none">
+                Нет
+              </button>
+              <button type="button" data-option-group="integrations" data-option-value="basic">
+                Форма, мессенджеры, аналитика
+              </button>
+              <button type="button" data-option-group="integrations" data-option-value="crm">
+                CRM, оплаты, бронирования и т.д.
+              </button>
+            </div>
+          </div>
+
+          <div class="estimate-box">
+            <span>Ориентировочно</span>
+            <strong data-estimate-price>от 10 000 ₽</strong>
+            <small data-estimate-timeline>от 7 дней</small>
+          </div>
+
+          <div class="telegram-plan">
+            <h3>Получите план запуска сайта за 5 минут</h3>
+            <p>
+              Ответьте на вопросы в Telegram — получите список того, что нужно для запуска: базовый
+              минимум, структуру сайта, аналитику и, самое важное, юридический блок, чтобы снизить
+              риск штрафов.
+            </p>
+          </div>
+
+          <a
+            class="button button-primary full"
+            data-telegram-link
+            href="https://t.me/rndmax"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Получить план в Telegram
+          </a>
+          <pre class="lead-preview" data-lead-preview aria-label="Предпросмотр заявки"></pre>
+        </aside>
+      </section>
+
+      <section class="included section-shell" aria-label="Что вы получаете">
+        <div class="included-item">
+          <strong>Готовый сайт</strong>
+          <span>На чистом HTML или готовом решении, если нужно быстрее и дешевле.</span>
+        </div>
+        <div class="included-item">
+          <strong>Адаптивная верстка</strong>
+          <span>Корректно работает на компьютере, телефоне и планшете.</span>
+        </div>
+        <div class="included-item">
+          <strong>SEO-ready</strong>
+          <span>Базовая подготовка для Яндекс (Алиса ИИ) и Google (остальные ИИ).</span>
+        </div>
+        <div class="included-item">
+          <strong>Инструкция и поддержка</strong>
+          <span>Покажем, как управлять сайтом, и 30 дней поможем после запуска.</span>
+        </div>
+      </section>
+
+      <section class="cases section-shell" id="cases">
+        <div class="section-heading">
+          <p class="eyebrow">Реальные проекты</p>
+          <h2>Кейсы, которые показывают путь от сайта к системе</h2>
+          <p>
+            Начинаем с понятного запроса бизнеса, а дальше подключаем оплаты, бронирование, CRM,
+            кабинеты и автоматизацию.
+          </p>
+        </div>
+        <div class="case-grid">
+          <a
+            class="case-card"
+            href="https://goodstoryclub.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Открыть кейс Good Story Club в новой вкладке"
+          >
+            <img
+              src="./assets/case-good-story-club.png"
+              alt="Премиум спорт-клуб с падел-кортами и бассейном"
+            />
+            <div>
+              <span class="tag green">Бронирование услуг</span>
+              <h3>Good Story Club</h3>
+              <p>Лендинги услуг, онлайн-бронирование, членство и подтверждение оплат.</p>
+            </div>
+          </a>
+          <a
+            class="case-card"
+            href="https://novo-dent.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Открыть кейс Novo-Dent в новой вкладке"
+          >
+            <img
+              src="./assets/case-novo-dent.png"
+              alt="Сайт семейной стоматологической клиники Novo-Dent"
+            />
+            <div>
+              <span class="tag blue">Сайт стоматологии</span>
+              <h3>Novo-Dent</h3>
+              <p>
+                Сайт семейной стоматологической клиники с услугами, врачами, расписанием и записью
+                на первый визит.
+              </p>
+            </div>
+          </a>
+          <a
+            class="case-card"
+            href="https://arendo.korevsky.ru/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Открыть кейс Arendo в новой вкладке"
+          >
+            <img src="./assets/case-arendo.png" alt="Дашборд управления арендной недвижимостью" />
+            <div>
+              <span class="tag blue">Веб-приложение</span>
+              <h3>Arendo</h3>
+              <p>
+                Система управления бронированием: личные кабинеты, роли доступа, документы, платежи,
+                заметки и логирование действий.
+              </p>
+            </div>
+          </a>
+          <a
+            class="case-card"
+            href="https://umnico.com/ru/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Открыть кейс Umnico в новой вкладке"
+          >
+            <img src="./assets/case-umnico.png" alt="Омниканальная CRM и чат-платформа" />
+            <div>
+              <span class="tag green">CRM и интеграции</span>
+              <h3>Umnico</h3>
+              <p>
+                Высоконагруженная система с внутренним CRM, календарем и чатами, омниканальная
+                платформа.
+              </p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="extensions section-shell" id="extensions">
+        <div class="section-heading centered">
+          <p class="eyebrow">После запуска</p>
+          <h2>Что можно подключить дальше</h2>
+          <p>
+            Сайт становится точкой входа. Когда появляются заявки и данные, его можно развить в
+            полноценную IT-систему.
+          </p>
+        </div>
+        <div class="solution-grid">
+          <article>
+            <strong>Онлайн-оплаты</strong>
+            <span>Оплата услуг, заказов, абонементов и подтверждение платежей.</span>
+          </article>
+          <article>
+            <strong>Бронирование</strong>
+            <span>Календарь, ресурсы, услуги и уведомления для клиентов.</span>
+          </article>
+          <article>
+            <strong>Личные кабинеты</strong>
+            <span>История заказов, документы, баланс, бонусы и роли доступа.</span>
+          </article>
+          <article>
+            <strong>Программы лояльности</strong>
+            <span>Бонусы, скидки, статусы, промокоды и повторные продажи.</span>
+          </article>
+          <article>
+            <strong>Интеграции и автоматизация</strong>
+            <span>1C, МойСклад, amoCRM, Telegram, WhatsApp, email и API.</span>
+          </article>
+          <article>
+            <strong>CRM и воронки</strong>
+            <span>Заявки, сделки, клиенты и статусы в одном месте.</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="process section-shell" id="process">
+        <div class="section-heading centered">
+          <p class="eyebrow">Как работаем</p>
+          <h2>Понятный процесс без сюрпризов</h2>
+        </div>
+        <div class="process-grid">
+          <article>
+            <span>1</span>
+            <h3>Бриф и прототип</h3>
+            <p>Разбираем задачу, аудиторию и путь заявки. Собираем структуру сайта.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>Дизайн и согласование</h3>
+            <p>Делаем первый экран, ключевые блоки и понятную логику конверсии.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Разработка</h3>
+            <p>Верстаем, подключаем формы, аналитику, Telegram и нужные сервисы.</p>
+          </article>
+          <article>
+            <span>4</span>
+            <h3>Запуск и поддержка</h3>
+            <p>Проверяем адаптивность, публикуем сайт и остаемся рядом 30 дней.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq section-shell" id="faq">
+        <div class="faq-heading">
+          <p class="eyebrow">FAQ</p>
+          <h2>Часто задаваемые вопросы</h2>
+          <p>Коротко отвечаем на то, что обычно важно до старта сайта или веб-приложения.</p>
+        </div>
+        <div class="faq-list" aria-label="Часто задаваемые вопросы">
+          <article class="faq-item" data-faq-item="timeline">
+            <button
+              class="faq-trigger"
+              type="button"
+              data-faq-trigger
+              aria-expanded="false"
+              aria-controls="faq-timeline"
+            >
+              <span>В какие сроки будет создан сайт?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-timeline" data-faq-panel>
+              <p>
+                Первый рабочий запуск обычно занимает 10-14 дней, если проект укладывается в формат
+                лендинга или небольшого корпоративного сайта. Точные сроки зависят от объема
+                страниц, дизайна, интеграций и скорости согласования материалов.
+              </p>
+            </div>
+          </article>
+          <article class="faq-item" data-faq-item="price">
+            <button
+              class="faq-trigger"
+              type="button"
+              data-faq-trigger
+              aria-expanded="false"
+              aria-controls="faq-price"
+            >
+              <span>Цена не изменится в процессе работы над проектом?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-price" data-faq-panel>
+              <p>
+                После короткого брифа фиксируем состав работ, цену и сроки. Если по ходу проекта
+                появляются новые задачи, например CRM, онлайн-оплата или личный кабинет, согласуем
+                их отдельно до начала разработки.
+              </p>
+            </div>
+          </article>
+          <article class="faq-item" data-faq-item="ownership">
+            <button
+              class="faq-trigger"
+              type="button"
+              data-faq-trigger
+              aria-expanded="false"
+              aria-controls="faq-ownership"
+            >
+              <span>Кто будет владельцем сайта?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-ownership" data-faq-panel>
+              <p>
+                Сайт, домен, тексты, дизайн и доступы остаются за вами. Мы передаем рабочий проект,
+                инструкции и не привязываем бизнес к закрытой схеме, из которой нельзя выйти.
+              </p>
+            </div>
+          </article>
+          <article class="faq-item" data-faq-item="editing">
+            <button
+              class="faq-trigger"
+              type="button"
+              data-faq-trigger
+              aria-expanded="false"
+              aria-controls="faq-editing"
+            >
+              <span>Смогу ли я сам редактировать сайт после запуска?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-editing" data-faq-panel>
+              <p>
+                Да. Для простых сайтов дадим понятную инструкцию по управлению контентом. Если нужен
+                кабинет, каталог, блог или частые изменения, подберем CMS или административную часть
+                под ваш процесс.
+              </p>
+            </div>
+          </article>
+          <article class="faq-item" data-faq-item="constructor">
+            <button
+              class="faq-trigger"
+              type="button"
+              data-faq-trigger
+              aria-expanded="false"
+              aria-controls="faq-constructor"
+            >
+              <span>Чем вы отличаетесь от конструкторов сайтов?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-constructor" data-faq-panel>
+              <p>
+                Конструктор помогает быстро собрать страницу, но часто ограничивает интеграции и
+                развитие. Мы проектируем сайт как точку входа в систему: заявки, Telegram, CRM,
+                оплаты, бронирование, кабинеты и автоматизация могут подключаться по мере роста.
+              </p>
+            </div>
+          </article>
+          <article class="faq-item" data-faq-item="improvements">
+            <button
+              class="faq-trigger"
+              type="button"
+              data-faq-trigger
+              aria-expanded="false"
+              aria-controls="faq-improvements"
+            >
+              <span>Что если я захочу доработать сайт или добавить новые разделы?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-improvements" data-faq-panel>
+              <p>
+                Это нормальный сценарий. После запуска можно добавить новые страницы, формы, блог,
+                каталог, оплату, бронирование, программу лояльности или интеграцию с CRM. Мы
+                оставляем структуру готовой к развитию.
+              </p>
+            </div>
+          </article>
+          <article class="faq-item" data-faq-item="responsive">
+            <button
+              class="faq-trigger"
+              type="button"
+              data-faq-trigger
+              aria-expanded="false"
+              aria-controls="faq-responsive"
+            >
+              <span>Будет ли сайт адаптивным и удобным на мобильных устройствах?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-responsive" data-faq-panel>
+              <p>
+                Да. Проектируем и проверяем основные экраны для компьютера, телефона и планшета,
+                чтобы заявки можно было оставлять с любого устройства.
+              </p>
+            </div>
+          </article>
+          <article class="faq-item" data-faq-item="integrations">
+            <button
+              class="faq-trigger"
+              type="button"
+              data-faq-trigger
+              aria-expanded="false"
+              aria-controls="faq-integrations"
+            >
+              <span>Можно ли подключить CRM, оплату, бронирование или Telegram?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-integrations" data-faq-panel>
+              <p>
+                Да. Начать можно с простой формы и отправки заявок в Telegram, а затем подключить
+                amoCRM, онлайн-оплаты, календарь бронирования, личные кабинеты, рассылки и другие
+                интеграции.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="final-cta section-shell">
+        <div>
+          <p>
+            Ответьте на вопросы в Telegram — получите список того, что нужно для запуска: базовый
+            минимум, структуру сайта, аналитику и, самое важное, юридический блок, чтобы снизить
+            риск штрафов.
+          </p>
+        </div>
+        <a
+          class="button button-primary"
+          data-telegram-link
+          href="https://t.me/rndmax"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Получите план запуска сайта за 5 минут
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Контакты">
+      <div class="footer-brand">
+        <span>WebBuild</span>
+        <span>Разработка сайтов и корпоративных веб приложений</span>
+      </div>
+      <address class="footer-contacts">
+        <strong>ИП Иванов Иван Юрьевич</strong>
+        <span>ИНН: 238473487348</span>
+        <span>ОГРНИП: 3438243284234</span>
+        <span>Москва, Россия</span>
+        <a href="mailto:info@mail.ru">info@mail.ru</a>
+        <a data-telegram-link href="https://t.me/rndmax" target="_blank" rel="noopener noreferrer">
+          Telegram для связи
+        </a>
+      </address>
+      <div class="footer-links">
+        <a href="./privacy.html" target="_blank" rel="noopener noreferrer">
+          Политика обработки персональных данных
+        </a>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
