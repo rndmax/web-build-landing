@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="WebBuild">
+  <rect width="1200" height="630" fill="#f7f1ea" />
+  <rect x="54" y="54" width="1092" height="522" rx="34" fill="#ffffff" />
+  <circle cx="167" cy="164" r="72" fill="#07122f" />
+  <text
+    x="167"
+    y="188"
+    fill="#ffffff"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="58"
+    font-weight="800"
+    letter-spacing="0"
+    text-anchor="middle"
+  >wb</text>
+  <text
+    x="270"
+    y="150"
+    fill="#07122f"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="31"
+    font-weight="800"
+    letter-spacing="0"
+  >WebBuild</text>
+  <text
+    x="270"
+    y="192"
+    fill="#6b7588"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="25"
+    font-weight="600"
+    letter-spacing="0"
+  >Сайты, веб-приложения и IT-решения</text>
+  <text
+    x="92"
+    y="320"
+    fill="#07122f"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="54"
+    font-weight="800"
+    letter-spacing="0"
+  >Создадим сайт, который приносит заявки</text>
+  <text
+    x="92"
+    y="382"
+    fill="#07122f"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="43"
+    font-weight="800"
+    letter-spacing="0"
+  >от прототипа до запуска за 14 дней</text>
+  <text
+    x="92"
+    y="466"
+    fill="#39445c"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="30"
+    font-weight="500"
+    letter-spacing="0"
+  >Корпоративный портал, лендинг для рекламы</text>
+  <text
+    x="92"
+    y="511"
+    fill="#39445c"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="30"
+    font-weight="500"
+    letter-spacing="0"
+  >или интернет-магазин с системой лояльности — под ключ.</text>
+  <circle cx="1058" cy="144" r="13" fill="#ff5a16" />
+  <circle cx="1100" cy="144" r="13" fill="#07122f" />
+  <circle cx="1016" cy="144" r="13" fill="#28a96f" />
+</svg>
