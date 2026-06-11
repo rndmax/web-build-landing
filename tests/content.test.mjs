@@ -10,7 +10,7 @@ const faviconSvg = existsSync(faviconUrl) ? readFileSync(faviconUrl, "utf8") : "
 const socialPreviewUrl = new URL("../assets/social-preview.svg", import.meta.url);
 const socialPreviewSvg = existsSync(socialPreviewUrl) ? readFileSync(socialPreviewUrl, "utf8") : "";
 const launchPlanText =
-  "Мы делаем сайты каждый день и создали базовый минимум для запуска сайта. С удовольствием делимся с вами.";
+  "Мы делаем сайты каждый день и собрали базовый минимум для запуска сайта: от домена и хостинга до юридических документов, о которых часто вспоминают уже после штрафов. С удовольствием делимся с вами.";
 const normalizedHtml = html.replace(/\s+/g, " ");
 
 function optionValues(groupName) {
