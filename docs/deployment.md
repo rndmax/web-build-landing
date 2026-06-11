@@ -4,7 +4,7 @@ Production deploy is handled by GitHub Actions.
 
 The workflow in `.github/workflows/deploy.yml` supports two paths:
 
-- automatic deploy after the `Landing checks` workflow succeeds on `main`;
+- automatic deploy after the `Landing checks` workflow succeeds for a push to `main`;
 - manual redeploy from the GitHub Actions UI with `Run workflow`.
 
 The server keeps a clone of this repository in the directory served by Nginx. The deploy job connects
@@ -27,8 +27,8 @@ git clean -fd
 
 For automatic deploys, `DEPLOY_REF` is the `Landing checks` commit SHA. For manual redeploys, it is
 `origin/main`. This updates HTML, CSS, JavaScript, images, and any newly added static pages.
-It also removes stale untracked files from the deployed checkout, so `DEPLOY_PATH` should be a pure
-repository clone without local-only files in the served directory.
+It also removes stale non-ignored untracked files from the deployed checkout, so `DEPLOY_PATH`
+should be a pure repository clone without local-only files in the served directory.
 
 ## GitHub Secrets
 
